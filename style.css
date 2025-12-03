@@ -288,3 +288,80 @@ html, body {
 .bottom-nav-item.is-active img{
     transform: scale(1.1);
 }
+.profile-header{
+    padding: 16px;
+}
+
+
+
+.profile-info{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-stats{
+    display: flex;
+    gap: 24px;
+}
+.stat{
+    text-align: center;
+    font-size: 14px;
+}
+.profile-name{
+    margin-top: 10px;
+    font-weight: 500;
+}
+.profile-bio{
+    font-size: 14px;
+    line-height: 18px;
+    margin: 6px 0px 12px;
+}
+
+.profile-edit-btn{
+    width: 100%;
+    padding: 8px 0px;
+    border: 1px solid rgb(37, 32, 32);
+    border-image: initial;
+    background: white;
+    border-radius: 8px;
+}
+
+.profile-tabs {
+    display: flex;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-top: 12px;
+}
+
+.profile-tabs .tab {
+    flex: 1;
+    padding: 10px 0;
+    text-align: center;
+    background: white;
+    border: none;
+}
+
+.profile-tabs .tab.active {
+    border-bottom: 2px solid black;
+    font-weight: bold;
+
+}
+
+.profile-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.profile-grid img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
