@@ -18,11 +18,16 @@ html, body {
     max-width: 375px;
     height: 640px;      
     margin: 20px auto;
-    background: #fff;
+    background: #E5E5E9;
     border-radius: 20px;
-    overflow: hidden;
+    overflow: auto;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+}
+
+.app::-webkit-scrollbar{
+    display: none;
 }
 
 .app-content {
@@ -41,7 +46,7 @@ html, body {
     justify-content: space-between;
     padding: 12px 16px;
     border-bottom: 1px solid #eee;
-    background: #fff;
+    background: #E5E5E9;
 }
 
 .top-bar-right{
@@ -59,7 +64,7 @@ html, body {
 .icon-box{
     width: 32px;
     height: 32px;
-    background: #fafafa;
+    background: #E5E5E9;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -68,9 +73,11 @@ html, body {
 
 }
 .icon-box img{
-    width: 18px;
-    height: 18px;
+    width: 28px;
+    height: 28px;
 }
+
+
 
 .stories{
     display: flex;
@@ -78,12 +85,15 @@ html, body {
     padding: 10px 12px;
     border-bottom: 1px solid #eee;
     overflow-x: auto;
-    background: #fff;
+    background: #E5E5E9;
 }
 
-.stories.stories::-webkit-scroolbar{
-    height: 0;
+.top-bar,
+.stories,
+.bottom-nav {
+    flex-shrink: 0;
 }
+
 
 .story{
     min-width: 64px;
@@ -94,15 +104,15 @@ html, body {
 }
 
 .story-avatar-wrap{
-    padding: 12px;
+    padding: 3px;
     border-radius: 50%;
-    background: linear-gradient(135deg,#f58529, #dd2a7b #8134af);
+    background: linear-gradient(135deg,#f58529, #dd2a7b , #8134af);
 }
 .story-avatar{
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     overflow: hidden;
     background: #ccc;
 }
@@ -122,13 +132,18 @@ html, body {
 .post{
     background : #fff;
     border-bottom: 1px solid #eee;
+    border-radius: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 30px;
 }
 
 .post-header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 12px;
+    padding: 4px 12px;
+    margin-top: 8px;
 }
 
 .post-user{
@@ -169,8 +184,9 @@ html, body {
 .post-more{
     border: none;
     background: transparent;
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
+     padding-bottom: 10px ;
 }
 
 .post-image{
@@ -193,6 +209,9 @@ html, body {
     padding: 8px 12px;
 }
 
+.post-like {
+    margin-bottom: 15px;
+}
 
 .post-actions-left {
     display: flex;
@@ -213,6 +232,8 @@ html, body {
     cursor: pointer;  
     padding: 6px;
 }
+
+
 
 
 .post-info {
@@ -244,6 +265,8 @@ html, body {
     color: #999;
     text-transform: uppercase;
     margin-left: 12px;
+    margin-bottom: 10px;
+    
 }
 
 
@@ -275,6 +298,11 @@ html, body {
     justify-content: center;
 }
 
+.bottom-nav-item .heart{
+    width: 32px;
+    height: 32px;
+}
+
 
 .bottom-nav-item img{
     width: 22px;
@@ -290,6 +318,7 @@ html, body {
 }
 .profile-header{
     padding: 16px;
+    background: white;
 }
 
 
@@ -347,6 +376,7 @@ html, body {
     text-align: center;
     background: white;
     border: none;
+    cursor: pointer;
 }
 
 .profile-tabs .tab.active {
@@ -358,10 +388,111 @@ html, body {
 .profile-grid{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    overflow-y: auto;
+}
+
+.profile-grid::-webkit-scrollbar{
+    display: none;
 }
 
 .profile-grid img{
     width: 100%;
     height: 150px;
     object-fit: cover;
+}
+
+.search-header{
+    border-bottom: 1px solid rgb(238, 238, 238) ;
+    background: rgb(255, 255, 255);
+    padding: 12px 16px 8px;
+    border-radius: 0 0 25px 25px;
+}
+.search-input-wrap{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgb(242, 242, 242);
+    border-radius: 10px;
+    padding: 6px 10px;
+}
+
+.search-icon img {
+    width: 16px;
+    height: 16px;
+}
+
+.search-input{
+    width: 100%;
+    font-size: 14px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    outline: none;
+    background: transparent;
+}
+
+.search-chips{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    gap: 24px;
+    margin-right: 20px;
+}
+
+.search-chip{
+    width: 100%;
+    border-radius: 21px;
+    padding: 10px;
+    border-style: none;
+    background: #fff;
+    font-weight: bolder;
+}
+
+.search-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr) ;
+    gap: 10px;
+    grid-auto-rows: 120px;
+    margin-left: 21px;
+    margin-right: 21px;
+}
+
+.search-grid > img:nth-child(3n+1) {
+    grid-row: span 2;
+    border-radius: 16px 0 0 16px;
+}
+
+.search-grid > img:nth-child(3n+2)  {
+    border-radius: 0 16px 16px 0;
+}
+
+.search-grid > img:nth-child(3n+3)  {
+    border-radius: 0 16px 16px 0;
+}
+
+
+.search-grid img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.like-btn input {
+    display: none; 
+}
+
+.like-btn {
+    cursor: pointer;
+}
+
+.like-btn input:checked + .heart-icon {
+    filter: invert(23%) sepia(98%) saturate(6465%) hue-rotate(0deg) brightness(98%) contrast(109%);
+}
+
+.heart-icon {
+    width: 24px;
+    height: 24px;
+    transition: 0.2s ease;
 }
