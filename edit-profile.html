@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <a href="profile.html" class="back-btn">
+                <img src="icons/back.svg" alt="back">
+            </a>
+            <span class="logo-text">Edit Profile</span>
+        </div>
+    </header>
+
+    <div class="app-content edit-profile-content">
+
+        <div class="edit-profile-header">
+            <img class="profile-avatar" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&w=100" alt="avatar">
+            <button class="change-photo-btn">Change profile photo</button>
+        </div>
+
+        <form class="edit-form">
+
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" value="username">
+            </div>
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" value="Burak">
+            </div>
+
+            <div class="form-group">
+                <label>Bio</label>
+                <textarea rows="3" placeholder="Bio"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" value="user@example.com">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="New password">
+            </div>
+
+            <div class="form-group">
+                <label>Repeat Password</label>
+                <input type="password" placeholder="Repeat password">
+            </div>
+
+            <button type="submit" class="save-btn">Save</button>
+        </form>
+
+    </div>
+
+    <nav class="bottom-nav">
+        <button class="bottom-nav-item">
+            <a href="index.html"><img src="icons/home.svg" alt=""></a>
+        </button>
+        <button class="bottom-nav-item">
+            <a href="search.html"><img src="icons/search.svg" alt=""></a>
+        </button>
+        <button class="bottom-nav-item">
+            <img src="icons/add.svg" alt="">
+        </button>
+        <button class="bottom-nav-item">
+            <img class="heart" src="icons/heartnav.svg" alt="">
+        </button>
+        <button class="bottom-nav-item is-active">
+            <a href="profile.html"><img src="icons/profile.svg" alt=""></a>
+        </button>
+    </nav>
+
+</div>
+</body>
+</html>
